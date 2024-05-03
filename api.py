@@ -56,17 +56,5 @@ if __name__ == '__main__':
     # tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
     # model = load_model_on_gpus(model_path, num_gpus=2)
     model.eval()
-    # paper_TEMPLATE = """
-    # 请根据以下步骤和提示，帮助学生解决提供的数学方程：
-    # 1.首先，请确认提供的表达式是否为一个方程。如果是方程，请识别方程中的未知数（例如：x, y, z等）。简要解释方程的结构和含义，帮助学生理解方程所表达的关系。
-    # 2.判断方程的类型（如线性方程、二次方程、指数方程等）。根据方程类型，提供相应的解题策略或公式（例如：移项、合并同类项、使用公式求解等）。
-    # 3.展示方程求解的详细步骤，包括每个步骤的操作和原因。如果方程需要多个步骤才能求解，请按照逻辑顺序逐步展示。
-    # 4.在求解完成后，将解代入原方程进行验证，确保解的准确性。解释解的含义，并说明它如何满足原方程的条件。
-    # 5.提供一到两个练习题，让学生尝试自己求解。
 
-    # 待求解的方程如下：
-    # 2*x + 5 = 0
-    # """
-    # response,_ = model.chat(tokenizer,paper_TEMPLATE,[],temperature=0.95,)
-    # print(f'response :{response}')
-    uvicorn.run(app, host='0.0.0.0', port=8000, workers=1)
+    uvicorn.run(app, host='localhost', port=8000, workers=1)
